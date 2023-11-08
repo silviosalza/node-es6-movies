@@ -96,7 +96,9 @@ const catalogoMedia = [
     toString(){
         return `${this.title} è un ${this.type} di genere ${this.genre}. E' stato rilasciato nell'anno ${this.year} ed ha una media voto di ${this.rating}`;
     }
-    
+
+
+
   }
 
   class TVSeries extends Movie{
@@ -108,15 +110,23 @@ const catalogoMedia = [
     }
 
     toString(){
-        return `${this.title} è un ${this.type} di genere ${this.genre}. E' stato rilasciato nell'anno ${this.year} ed ha una media voto di ${this.rating}`;
+        return `${this.title} è un ${this.type} di genere ${this.genre}. E' stato rilasciato nell'anno ${this.year}, per un totale di ${this.seasons} stagioni, ed ha una media voto di ${this.rating}`;
     }
 
 
+  
   };
 
-//METODI
-
-
+let instances = catalogoMedia.map(item =>
+    {
+        if (item.type === "movie")
+        {
+            return new Movie(item.title , item.year , item.genre ,item.rating ,item.type )
+        }else {
+             return new TVSeries(item.title , item.year , item.genre ,item.rating ,item.type , item.seasons)
+            
+        }
+    })
 
 
 
@@ -126,7 +136,9 @@ const catalogoMedia = [
 
 //TEST
 
-  const movie1 = new Movie("LaLaLand", 2018, "Romance", 9.2, "movie")
-   console.log(movie1.toString());
-  const tvseries1 = new TVSeries("Initial D", 1998, "Anime", 9.8, "tv", 8)
-   console.log(tvseries1.toString());
+const movie1 = new Movie("LaLaLand", 2018, "Romance", 9.2, "movie")
+console.log(movie1.toString());
+const tvseries1 = new TVSeries("Initial D", 1998, "Anime", 9.8, "tv", 8)
+console.log(tvseries1.toString());
+
+console.log(instances);
