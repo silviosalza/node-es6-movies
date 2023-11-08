@@ -93,6 +93,10 @@ const catalogoMedia = [
         this.type = type
 
     }
+    toString(){
+        return `${this.title} è un ${this.type} di genere ${this.genre}. E' stato rilasciato nell'anno ${this.year} ed ha una media voto di ${this.rating}`;
+    }
+    
   }
 
   class TVSeries extends Movie{
@@ -103,13 +107,26 @@ const catalogoMedia = [
         this.seasons = seasons
     }
 
+    toString(){
+        return `${this.title} è un ${this.type} di genere ${this.genre}. E' stato rilasciato nell'anno ${this.year} ed ha una media voto di ${this.rating}`;
+    }
 
-  }
+
+  };
+
+//METODI
 
 
-  //TEST
+
+
+
+
+
+
+
+//TEST
 
   const movie1 = new Movie("LaLaLand", 2018, "Romance", 9.2, "movie")
-  console.log(movie1);
+   console.log(movie1.toString());
   const tvseries1 = new TVSeries("Initial D", 1998, "Anime", 9.8, "tv", 8)
-  console.log(tvseries1);
+   console.log(tvseries1.toString());
