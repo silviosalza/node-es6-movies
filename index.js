@@ -93,6 +93,8 @@ const catalogoMedia = [
         this.type = type
 
     }
+
+    //METODI
     toString(){
         return `${this.title} è un ${this.type} di genere ${this.genre}. E' stato rilasciato nell'anno ${this.year} ed ha una media voto di ${this.rating}`;
     }
@@ -128,6 +130,14 @@ let instances = catalogoMedia.map(item =>
         }
     })
 
+    function avgRat(array){
+        let totalRat = 0;
+         array.map(item =>
+             {
+                 totalRat += item.rating
+         });
+    return avg = totalRat / array.length}
+
 
 
 
@@ -142,3 +152,4 @@ const tvseries1 = new TVSeries("Initial D", 1998, "Anime", 9.8, "tv", 8)
 console.log(tvseries1.toString());
 
 console.log(instances);
+console.log("La media voto è " + avgRat(catalogoMedia));
