@@ -11,7 +11,7 @@ const catalogoMedia = [
     {
       title: "Stranger Things",
       year: 2016,
-      genre: "Drama, Fantasy, Horror",
+      genre: "Fantasy",
       rating: 8.7,
       type: "tv",
       seasons: 3
@@ -26,7 +26,7 @@ const catalogoMedia = [
     {
       title: "Breaking Bad",
       year: 2008,
-      genre: "Crime, Drama, Thriller",
+      genre: "Thriller",
       rating: 9.5,
       type: "tv",
       seasons: 5
@@ -34,14 +34,14 @@ const catalogoMedia = [
     {
       title: "The Dark Knight",
       year: 2008,
-      genre: "Action, Crime, Drama",
+      genre: "Action",
       rating: 9.0,
       type: "movie"
     },
     {
       title: "Friends",
       year: 1994,
-      genre: "Comedy, Romance",
+      genre: "Comedy",
       rating: 8.9,
       type: "tv",
       seasons: 10
@@ -49,14 +49,14 @@ const catalogoMedia = [
     {
       title: "Pulp Fiction",
       year: 1994,
-      genre: "Crime, Drama",
+      genre: "Crime",
       rating: 8.9,
       type: "movie"
     },
     {
       title: "Game of Thrones",
       year: 2011,
-      genre: "Action, Adventure, Drama",
+      genre: "Action",
       rating: 9.2,
       type: "tv",
       seasons: 8
@@ -64,14 +64,14 @@ const catalogoMedia = [
     {
       title: "The Matrix",
       year: 1999,
-      genre: "Action, Sci-Fi",
+      genre: "Action",
       rating: 8.7,
       type: "movie"
     },
     {
       title: "Stranger Than Fiction",
       year: 2006,
-      genre: "Comedy, Drama, Fantasy",
+      genre: "Comedy",
       rating: 7.6,
       type: "movie"
     }
@@ -130,6 +130,8 @@ let instances = catalogoMedia.map(item =>
         }
     })
 
+    //FUNZIONI
+
     function avgRat(array){
         let totalRat = 0;
          array.map(item =>
@@ -137,6 +139,17 @@ let instances = catalogoMedia.map(item =>
                  totalRat += item.rating
          });
     return avg = totalRat / array.length}
+
+    function genreList(array){
+        let genreArray = [];
+        array.map(item =>
+            {if (!genreArray.includes(item.genre)){
+                genreArray.push(item.genre)
+            }     
+        });
+        return genreArray
+        
+    }
 
 
 
@@ -153,3 +166,4 @@ console.log(tvseries1.toString());
 
 console.log(instances);
 console.log("La media voto è " + avgRat(catalogoMedia));
+console.log(genreList(catalogoMedia));
