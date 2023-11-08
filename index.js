@@ -96,6 +96,12 @@ const catalogoMedia = [
   }
 
   class TVSeries extends Movie{
+    seasons
+
+    constructor (title,year,genre,rating,type,seasons){
+        super(title,year,genre,rating,type)
+        this.seasons = seasons
+    }
 
 
   }
@@ -105,3 +111,5 @@ const catalogoMedia = [
 
   const movie1 = new Movie("LaLaLand", 2018, "Romance", 9.2, "movie")
   console.log(movie1);
+  const tvseries1 = new TVSeries("Initial D", 1998, "Anime", 9.8, "tv", 8)
+  console.log(tvseries1);
