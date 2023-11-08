@@ -152,7 +152,7 @@ let instances = catalogoMedia.map(item =>
     function sameGenreList(array, genre){
     
         let sameGenreArray = array.filter(item => item.genre === genre )
-        return sameGenreArray
+        return  sameGenreArray.map(movie => new Movie(movie.title, movie.year, movie.genre, movie.rating, movie.type).toString());
     }
 
 
