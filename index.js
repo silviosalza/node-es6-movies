@@ -114,8 +114,6 @@ const catalogoMedia = [
     toString(){
         return `${this.title} è un ${this.type} di genere ${this.genre}. E' stato rilasciato nell'anno ${this.year}, per un totale di ${this.seasons} stagioni, ed ha una media voto di ${this.rating}`;
     }
-
-
   
   };
 
@@ -131,6 +129,7 @@ let instances = catalogoMedia.map(item =>
     })
 
     //FUNZIONI
+
 
     function avgRat(array){
         let totalRat = 0;
@@ -150,6 +149,11 @@ let instances = catalogoMedia.map(item =>
         return genreArray
         
     }
+    function sameGenreList(array, genre){
+    
+        let sameGenreArray = array.filter(item => item.genre === genre )
+        return sameGenreArray
+    }
 
 
 
@@ -165,5 +169,6 @@ const tvseries1 = new TVSeries("Initial D", 1998, "Anime", 9.8, "tv", 8)
 console.log(tvseries1.toString());
 
 console.log(instances);
-console.log("La media voto è " + avgRat(catalogoMedia));
-console.log(genreList(catalogoMedia));
+console.log("La media voto è " + avgRat(instances));
+console.log(genreList(instances));
+console.log(sameGenreList(instances, "Action"));
